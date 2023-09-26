@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+</style>
+<body>
+
+    <h1>JAVASCRIPT OOP BANK ACCOUNT PROGRAM</h1>
+
+    <script>
+
+        class bankAccount{
+            constructor (name, balance){
+                this.name    = name;
+                this.balance = balance;
+            }
+            deposit(amount){
+                this.balance += amount; 
+                console.log("The Total amount present in your account is: " + this.balance + " shillings");
+            }
+            withdraw(amount){
+                this.balance -= amount;
+                if(this.balance >= amount){
+                    console.log("Transaction successful! Kindly proceed and withdraw.");
+                }else if(this.balance < amount){
+                    console.log("Transaction Failed! Kindly Try again later");
+                }else{
+                    console.log("Invalid Input!")
+                }
+            }
+            checkBalance(){
+                if(this.balance < 0){
+                    // negative
+                    console.log("Warning! You have a negative bank account status. The Outstanding Balance in your account is: " + this.balance + " Shillings");
+                }else if(this.balance > 0){
+                    // positive
+                    console.log("The Outstanding Balance in your account is: " + this.balance + " Shillings");
+                }else{console.log("Invalid Input");} 
+            }
+        }
+        let Account1 = new bankAccount("Stella Njeri Maina", 10000 );
+        Account1.deposit(100000);
+        Account1.withdraw(60000);
+        Account1.checkBalance();
+
+    </script> 
+    
+</body>
+</html>
