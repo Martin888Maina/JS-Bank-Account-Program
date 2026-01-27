@@ -1,0 +1,491 @@
+/* Color Palette - Banking theme with earth tones and forest greens */
+:root {
+    --primary-green: #2d5016;
+    --secondary-green: #3d6b1f;
+    --accent-gold: #d4a574;
+    --light-cream: #f8f6f1;
+    --dark-text: #1a1a1a;
+    --medium-gray: #5a5a5a;
+    --light-gray: #e8e6e1;
+    --success-green: #4a7c2c;
+    --warning-orange: #c97d3f;
+    --error-red: #b84c3f;
+    --card-shadow: 0 4px 20px rgba(45, 80, 22, 0.08);
+    --hover-shadow: 0 8px 30px rgba(45, 80, 22, 0.12);
+}
+
+/* Base reset and typography */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: linear-gradient(135deg, var(--light-cream) 0%, #ebe8df 100%);
+    color: var(--dark-text);
+    min-height: 100vh;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+/* Main container with max width for readability */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Header section with logo and branding */
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.logo-icon {
+    width: 36px;
+    height: 36px;
+    color: var(--primary-green);
+}
+
+.header h1 {
+    font-size: 2rem;
+    color: var(--primary-green);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.subtitle {
+    color: var(--medium-gray);
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* Account card with gradient background */
+.account-card {
+    background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-green) 100%);
+    border-radius: 16px;
+    padding: 28px;
+    color: white;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 24px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.account-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--hover-shadow);
+}
+
+.account-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 28px;
+}
+
+.account-label {
+    font-size: 0.85rem;
+    opacity: 0.9;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.account-name {
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+}
+
+.status-badge {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+}
+
+/* Balance display section */
+.balance-section {
+    position: relative;
+}
+
+.balance-label {
+    font-size: 0.85rem;
+    opacity: 0.9;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.balance-amount {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 12px;
+}
+
+.balance-indicator {
+    height: 4px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.balance-indicator::after {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 70%;
+    background: var(--accent-gold);
+    border-radius: 2px;
+    transition: width 0.5s ease;
+}
+
+/* Transaction panel with clean white background */
+.transaction-panel {
+    background: white;
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 24px;
+}
+
+.panel-title {
+    font-size: 1.3rem;
+    color: var(--primary-green);
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Input styling with focus effects */
+.input-group {
+    margin-bottom: 24px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--medium-gray);
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.amount-input {
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid var(--light-gray);
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--dark-text);
+    transition: all 0.3s ease;
+    background: var(--light-cream);
+}
+
+.amount-input:focus {
+    outline: none;
+    border-color: var(--primary-green);
+    background: white;
+    box-shadow: 0 0 0 3px rgba(45, 80, 22, 0.1);
+}
+
+/* Remove number input spinners for cleaner look */
+.amount-input::-webkit-outer-spin-button,
+.amount-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+.amount-input[type=number] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+/* Button group for deposit and withdraw */
+.button-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+/* Button base styling with icons */
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 24px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Ripple effect on button click */
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn:active::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* Deposit button with green theme */
+.btn-deposit {
+    background: var(--success-green);
+    color: white;
+}
+
+.btn-deposit:hover {
+    background: var(--primary-green);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(74, 124, 44, 0.3);
+}
+
+/* Withdraw button with orange/warning theme */
+.btn-withdraw {
+    background: var(--warning-orange);
+    color: white;
+}
+
+.btn-withdraw:hover {
+    background: #b56d30;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(201, 125, 63, 0.3);
+}
+
+/* Check balance button with outline style */
+.btn-check {
+    width: 100%;
+    background: transparent;
+    color: var(--primary-green);
+    border: 2px solid var(--primary-green);
+}
+
+.btn-check:hover {
+    background: var(--primary-green);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(45, 80, 22, 0.2);
+}
+
+/* Button disabled state */
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+/* Transaction history panel */
+.history-panel {
+    background: white;
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: var(--card-shadow);
+}
+
+.history-list {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+/* Custom scrollbar for transaction history */
+.history-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.history-list::-webkit-scrollbar-track {
+    background: var(--light-gray);
+    border-radius: 3px;
+}
+
+.history-list::-webkit-scrollbar-thumb {
+    background: var(--primary-green);
+    border-radius: 3px;
+}
+
+.history-list::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-green);
+}
+
+/* Empty state when no transactions */
+.empty-state {
+    text-align: center;
+    color: var(--medium-gray);
+    padding: 40px 20px;
+    font-style: italic;
+}
+
+/* Individual transaction item */
+.transaction-item {
+    padding: 16px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    background: var(--light-cream);
+    border-left: 4px solid var(--light-gray);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.transaction-item:hover {
+    background: white;
+    transform: translateX(4px);
+}
+
+/* Different border colors for transaction types */
+.transaction-item.deposit {
+    border-left-color: var(--success-green);
+}
+
+.transaction-item.withdraw {
+    border-left-color: var(--warning-orange);
+}
+
+.transaction-item.check {
+    border-left-color: var(--primary-green);
+}
+
+.transaction-item.error {
+    border-left-color: var(--error-red);
+}
+
+/* Transaction text content */
+.transaction-info {
+    flex: 1;
+}
+
+.transaction-type {
+    font-weight: 600;
+    color: var(--dark-text);
+    margin-bottom: 4px;
+}
+
+.transaction-message {
+    font-size: 0.85rem;
+    color: var(--medium-gray);
+}
+
+/* Transaction amount display */
+.transaction-amount {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.transaction-amount.positive {
+    color: var(--success-green);
+}
+
+.transaction-amount.negative {
+    color: var(--warning-orange);
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 640px) {
+    body {
+        padding: 12px;
+    }
+
+    .header h1 {
+        font-size: 1.6rem;
+    }
+
+    .account-card,
+    .transaction-panel,
+    .history-panel {
+        padding: 20px;
+    }
+
+    .balance-amount {
+        font-size: 2rem;
+    }
+
+    .button-group {
+        grid-template-columns: 1fr;
+    }
+
+    .transaction-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Focus visible for keyboard navigation */
+.btn:focus-visible,
+.amount-input:focus-visible {
+    outline: 3px solid var(--accent-gold);
+    outline-offset: 2px;
+}
