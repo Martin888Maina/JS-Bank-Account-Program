@@ -132,7 +132,7 @@ The user interface is managed through several helper functions:
 ## Design Decisions
 
 ### Color Palette
-The application uses an earth-tone banking theme with forest greens and gold accents, avoiding common AI-generated color schemes:
+The application uses an earth-tone banking theme with forest greens and gold accents:
 - Primary Green: #2d5016 (Forest green for trust)
 - Accent Gold: #d4a574 (Financial sophistication)
 - Light Cream: #f8f6f1 (Professional background)
