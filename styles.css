@@ -28,12 +28,15 @@ body {
     min-height: 100vh;
     padding: 20px;
     line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 /* Main container with max width for readability */
 .container {
+    width: 100%;
     max-width: 600px;
-    margin: 0 auto;
     animation: fadeIn 0.6s ease-out;
 }
 
@@ -393,22 +396,6 @@ body {
     transform: translateX(4px);
 }
 
-/* Different border colors for transaction types */
-.transaction-item.deposit {
-    border-left-color: var(--success-green);
-}
-
-.transaction-item.withdraw {
-    border-left-color: var(--warning-orange);
-}
-
-.transaction-item.check {
-    border-left-color: var(--primary-green);
-}
-
-.transaction-item.error {
-    border-left-color: var(--error-red);
-}
 
 /* Transaction text content */
 .transaction-info {
@@ -432,13 +419,6 @@ body {
     font-size: 1.1rem;
 }
 
-.transaction-amount.positive {
-    color: var(--success-green);
-}
-
-.transaction-amount.negative {
-    color: var(--warning-orange);
-}
 
 /* Responsive design for smaller screens */
 @media (max-width: 640px) {

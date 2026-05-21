@@ -86,7 +86,7 @@ const checkBalanceBtn = document.getElementById('checkBalanceBtn');
 const historyList = document.getElementById('historyList');
 
 // Initialize the bank account with default values
-let currentAccount = new BankAccount('Stella Njeri Maina', 10000);
+let currentAccount = new BankAccount('Jane Doe', 10000);
 
 // Function to update the UI with current account information
 function updateUI() {
