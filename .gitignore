@@ -5,6 +5,12 @@ Digital Ocean Deployment Strategy.md
 digital ocean start up guide.md
 HOW TO UPDATE AND REDEPLOY.md
 GITHUB strategy for portfolio project application to be deployed to digital ocean.md
+COMPLETE GUIDE TO FIX DEPLOYED DIGITAL OCEAN SECURITY ISSUES.txt
+SECURITY CONSIDERATIONS FOR DEPLOYED APPLICATIONS.txt
+IMPLEMENTING PROPER COMMENTS FOR CODE BASES.md
+
+# Tool and AI assistant files
+.claude/
 
 # Environment files
 .env
